@@ -12,6 +12,7 @@ import os.log
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var listItem = [Item]()
+    var index: Int = 0
     
     @IBOutlet weak var tblList: UITableView!
     
@@ -66,20 +67,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: - Init Data Test
     
     private func loadSampleItems() {
-        guard let item1 = Item(lable: "Lable A", time: "9h", date: "Today") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        guard let item2 = Item(lable: "Lable B", time: "10h", date: "Today") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        guard let item3 = Item(lable: "Lable C", time: "11h", date: "Today") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        guard let item4 = Item(lable: "Lable D", time: "12h", date: "Today") else {
+        guard let item1 = Item(lable: "Demo Item", time: "9h", date: "Today") else {
             fatalError("Unable to instantiate meal1")
         }
         
-        listItem += [item1, item2, item3, item4]
+        listItem += [item1]
     }
     
     //MARK: - Table view data source
@@ -100,6 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.labelItem.text = item.lable
         cell.dateItem.text = item.date
         cell.timeItem.text = item.time
+        cell.btnCheckMark.tag = indexPath.row
         
         cell.selectionStyle = .none
         cell.btnCheckMark.addTarget(self, action: #selector(checkMarkButtonClicked(sender:)), for: .touchUpInside)
@@ -129,10 +122,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    
     @objc func checkMarkButtonClicked(sender: UIButton) {
+        print("Select: ", sender.isSelected)
         if sender.isSelected {
             sender.isSelected = false
         } else {
+            // Delete row of table
+            let section = 0
+            let row = sender.tag
+            let indexPath = IndexPath(row: row, section: section)
+            listItem.remove(at: indexPath.row)
+            self.tblList.deleteRows(at: [indexPath], with: .fade)
             sender.isSelected = true
         }
         
