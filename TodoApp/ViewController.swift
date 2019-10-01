@@ -95,8 +95,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.btnCheckMark.tag = indexPath.row
         
         cell.selectionStyle = .none
+        
         cell.btnCheckMark.addTarget(self, action: #selector(checkMarkButtonClicked(sender:)), for: .touchUpInside)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "addNewItemViewController") as? AddNewItemViewController
+        let item = listItem[indexPath.row]
+        print(item.lable)
+        
+        
+//        vc?.labelItemTextField.text = item.lable ?? ""
+        
+//        print("VC: ", vc?.labelItemTextField.text)
+
+//        vc?.labelItemTextField.text = item.lable
+//        vc?.dateItemTextField.text = item.date
+//        vc?.timeItemTextField.text = item.time
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

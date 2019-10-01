@@ -47,7 +47,7 @@
         <!--Add New Item View Controller-->
         <scene sceneID="zrC-uI-M69">
             <objects>
-                <viewController id="wKk-52-7YJ" customClass="AddNewItemViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNewItemViewController" id="wKk-52-7YJ" customClass="AddNewItemViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ice-TP-n3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
