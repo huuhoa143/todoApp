@@ -72,23 +72,47 @@
 		6E4E7FC6233F361300D62442 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				6E51136623488D16004C1A4D /* Controller */,
+				6E51136523488D10004C1A4D /* View */,
+				6E51136423488D05004C1A4D /* Model */,
 				6E4E7FE2233F379600D62442 /* Checked@2x.png */,
 				6E4E7FE1233F379600D62442 /* Checked@3x.png */,
 				6E4E7FDF233F379500D62442 /* UnChecked@2x.png */,
 				6E4E7FE0233F379500D62442 /* UnChecked@3x.png */,
 				6E4E7FC7233F361300D62442 /* AppDelegate.swift */,
 				6E4E7FC9233F361300D62442 /* SceneDelegate.swift */,
-				6E4E7FCB233F361300D62442 /* ViewController.swift */,
-				6E5EB6932341B2D9007CAC03 /* CheckMarkCell.swift */,
-				6E5EB6942341B2D9007CAC03 /* CheckMarkCell.xib */,
 				6E5EB6912341A74D007CAC03 /* AddNewItemViewController.swift */,
-				6E4E7FE7233F515F00D62442 /* Item.swift */,
 				6E4E7FCD233F361300D62442 /* Main.storyboard */,
 				6E4E7FD0233F361500D62442 /* Assets.xcassets */,
 				6E4E7FD2233F361500D62442 /* LaunchScreen.storyboard */,
 				6E4E7FD5233F361500D62442 /* Info.plist */,
 			);
 			path = TodoApp;
+			sourceTree = "<group>";
+		};
+		6E51136423488D05004C1A4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E4E7FE7233F515F00D62442 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E51136523488D10004C1A4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E5EB6932341B2D9007CAC03 /* CheckMarkCell.swift */,
+				6E5EB6942341B2D9007CAC03 /* CheckMarkCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6E51136623488D16004C1A4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E4E7FCB233F361300D62442 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
